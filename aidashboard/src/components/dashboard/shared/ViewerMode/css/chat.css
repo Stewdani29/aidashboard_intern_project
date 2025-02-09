@@ -1,0 +1,84 @@
+.Sara pre {
+  margin: 12px 0;
+  background: #212121;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  white-space: pre-wrap;
+  border: 2px solid #f3f3f3;
+  outline: 2px solid #212121;
+}
+
+.Sara code {
+  background: #212121;
+  overflow-wrap: break-word !important;
+  padding: 2px 5px;
+  font-size: 12px !important;
+  border-radius: 10px;
+  color: #fff;
+  margin: 3px 0;
+}
+
+.no-tailwindcss {
+  all: unset !important;
+}
+
+.Sara-cont {
+  -webkit-overflow-scrolling: touch;
+}
+
+.Sara {
+  overflow-wrap: break-word !important;
+  font-size: 0.9rem;
+}
+
+.Sara pre > code {
+  background: #212121;
+  color: #fff;
+  padding: 5px 3px;
+  border-radius: 10px;
+  margin: 3px 0;
+}
+.Sara pre ::selection {
+  background-color: #fff;
+  color: #4b5563;
+}
+
+.Sara ol,
+menu {
+  display: block;
+  color: #4b5563;
+  list-style-type: disclosure-closed;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 20px;
+  unicode-bidi: isolate;
+}
+
+.Sara ul {
+  display: block;
+  color: #4b5563;
+  list-style-type: square;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.Sara li {
+  margin-top: 0.6em;
+  color: #4b5563;
+  margin-bottom: 0.6em;
+  text-align: -webkit-match-parent;
+}
+
+.Sara p {
+  font-weight: 500 !important;
+  overflow-wrap: break-word !important;
+  color: #4b5563;
+  line-height: 28px;
+}
