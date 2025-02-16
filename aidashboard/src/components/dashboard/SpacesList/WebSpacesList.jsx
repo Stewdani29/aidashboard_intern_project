@@ -51,23 +51,23 @@ const WebSpacesList = () => {
             <img
                 src={LANGUAGE_VERSIONS[space.frameworks]?.banner || "https://via.placeholder.com/50"}
                 alt={space.frameworks}
-                className="h-32 w-full rounded-t-xl object-cover"
+                className="object-cover w-full h-32 rounded-t-xl"
             />
             <div
-                className="relative block px-5 pb-5 pt-3 bg-white shadow-md rounded-b-lg border border-gray-200 hover:shadow-lg transform transition-all duration-300"
+                className="relative block px-5 pt-3 pb-5 transition-all duration-300 transform bg-white border border-gray-200 rounded-b-lg shadow-md hover:shadow-lg"
             >
                 <div className="flex items-center justify-between mb-4">
                     <Link to={`/dashboard/webspace/info/${space.spaceid}`} className="flex items-center">
                         <img
                             src={LANGUAGE_VERSIONS[space.frameworks]?.image || "https://via.placeholder.com/50"}
                             alt={space.frameworks}
-                            className="w-8 object-cover"
+                            className="object-cover w-8"
                         />
                         <div className="ml-3">
-                            <h2 className="text-[0.9rem]leading-relaxed line-clamp-1 font-semibold text-gray-700 group-hover:text-gray-900">
+                            <h2 className="text-[0.9rem]leading-relaxed line-clamp-1 font-semibold text-sky-700 group-hover:text-sky-900">
                                 {space.heading.slice(0, 30)}
                             </h2>
-                            <p className="text-xs leading-relaxed line-clamp-1 text-gray-500">{space.spaceid}</p>
+                            <p className="text-xs leading-relaxed text-sky-500 line-clamp-1">{space.spaceid}</p>
                         </div>
                     </Link>
 
@@ -75,7 +75,7 @@ const WebSpacesList = () => {
                         <AlertDialog.Trigger asChild>
                             <button
                                 disabled={isWebSpaceDeleting}
-                                className="bg-red-100 disabled:opacity-50 p-1 active:scale-95 transition-all rounded-md text-red-500"
+                                className="p-1 text-red-500 transition-all bg-red-100 rounded-md disabled:opacity-50 active:scale-95"
                             >
                                 <HiTrash className="text-xl" />
                             </button>
@@ -83,15 +83,15 @@ const WebSpacesList = () => {
                         <AlertDialog.Portal>
                             <AlertDialog.Overlay className="bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0" />
                             <AlertDialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[85vh] w-[90vw] max-w-[500px] translate-x-[-50%] translate-y-[-50%] z-50 rounded-[6px] bg-white p-[25px] shadow-lg focus:outline-none">
-                                <AlertDialog.Title className="text-red-600 font-semibold m-0 text-xl">
+                                <AlertDialog.Title className="m-0 text-xl font-semibold text-red-600">
                                     Are you absolutely sure?
                                 </AlertDialog.Title>
-                                <AlertDialog.Description className="text-gray-600 mt-3 mb-5 text-[15px] leading-normal">
+                                <AlertDialog.Description className="text-sky-600 mt-3 mb-5 text-[15px] leading-normal">
                                     This action cannot be undone. This will move{" "}
-                                    <span className="text-gray-700 font-semibold capitalize">
+                                    <span className="font-semibold capitalize text-sky-700">
                                         {space.type} WebSpace
                                     </span>{" "}
-                                    on <span className="text-gray-700 font-semibold">{space.heading}</span> to the Trash
+                                    on <span className="font-semibold text-sky-700">{space.heading}</span> to the Trash
                                     page. You can restore it anytime.
                                 </AlertDialog.Description>
                                 <div className="flex justify-start gap-[25px]">
@@ -113,7 +113,7 @@ const WebSpacesList = () => {
                         </AlertDialog.Portal>
                     </AlertDialog.Root>
                 </div>
-                <p className="text-sm text-gray-600 mt-2 leading-relaxed line-clamp-2">
+                <p className="mt-2 text-sm leading-relaxed text-sky-600 line-clamp-2">
                     {space.explanation || "No description available for this space."}
                 </p>
             </div>
@@ -121,23 +121,23 @@ const WebSpacesList = () => {
     );
 
     return (
-        <div className="w-full min-h-screen px-6 py-6 bg-gray-50">
-            <div className="flex items-center w-full mb-10 justify-between">
-                <h1 className="text-2xl hidden md:block font-semibold ms-3 me-10">
+        <div className="w-full min-h-screen px-6 py-6 bg-gradient-to-br from-[#2193b0] to-[#6dd5ed]">
+            <div className="flex items-center justify-between w-full mb-10">
+                <h1 className="hidden text-2xl font-semibold text-white md:block ms-3 me-10">
                     Your&nbsp;WebSpaces
                 </h1>
                 <div className="flex items-center md:max-w-[500px] w-full">
                     <input
                         type="search"
                         onChange={(e) => setWebSearchPrompt(e.target.value)}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-main focus:border-main block w-full pl-3 p-2.5"
+                        className="bg-gray-50 border border-gray-300 text-sky-200 text-sm rounded-lg focus:ring-white focus:border-white block w-full pl-3 p-2.5"
                         placeholder="Search for your WebSpaces.."
                     />
                     <Popover.Root>
                         <Popover.Trigger asChild>
-                            <button className="p-2.5 relative ml-2 text-sm font-medium text-white bg-main rounded-lg border border-main transition-all active:scale-95">
+                            <button className="p-2.5 relative ml-2 text-sm font-medium text-sky-500 bg-white rounded-lg border border-white transition-all active:scale-95">
                                 <FaFilter className="text-[1rem] mt-1" />
-                                {webpromptLang !== "" && <div className="absolute -top-1 -right-1 size-3 rounded bg-green-400"></div>}
+                                {webpromptLang !== "" && <div className="absolute bg-green-400 rounded -top-1 -right-1 size-3"></div>}
                             </button>
                         </Popover.Trigger>
                         <Popover.Portal>
@@ -147,9 +147,9 @@ const WebSpacesList = () => {
                                 className="z-[100] rounded-lg px-5 py-4 bg-white focus:outline-none border border-gray-300 shadow-lg w-fit"
                             >
                                 <div className="pb-3">
-                                    <h1 className="text-main mb-3">Language</h1>
-                                    <div className="grid gap-3 place-items-center grid-cols-3">
-                                        <button onClick={() => setwebpromptLang('')} className="p-2 bg-gray-100 text-gray-400 rounded-md border">
+                                    <h1 className="mb-3 text-white">Language</h1>
+                                    <div className="grid grid-cols-3 gap-3 place-items-center">
+                                        <button onClick={() => setwebpromptLang('')} className="p-2 text-gray-400 bg-gray-100 border rounded-md">
                                             <PiEmptyBold />
                                         </button>
                                         {availableLangs.map((item, index) => (
@@ -172,7 +172,7 @@ const WebSpacesList = () => {
             </div>
             <div className="container mx-auto">
                 {webresults.length > 0 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {webresults.map((space) => renderSpaceCard(space))}
                     </div>
                 )}
@@ -183,7 +183,7 @@ const WebSpacesList = () => {
                             alt="Nothing to show"
                             className="w-40 mb-6"
                         />
-                        <h2 className="text-base break-words italic text-gray-500">No WebSpaces are found matching given context.</h2>
+                        <h2 className="text-base italic text-white break-words">No WebSpaces are found matching given context.</h2>
 
                     </div>
                 )}
@@ -193,12 +193,12 @@ const WebSpacesList = () => {
                         alt="Nothing to show"
                         className="w-32 mb-6"
                     />
-                    <h2 className="text-xl font-medium text-gray-600">No WebSpaces are available</h2>
-                    <p className="text-sm text-gray-500 mt-2 text-center">
+                    <h2 className="text-xl font-medium text-white">No WebSpaces are available</h2>
+                    <p className="mt-2 text-sm text-center text-white">
                         Create a new WebSpace to organize your projects and collaborate efficiently.
                     </p>
                     <button onClick={() => setNewOpen(true)}
-                        className="mt-6 px-5 py-2 bg-black text-white rounded-lg shadow hover:bg-black/80 transition"
+                        className="px-5 py-2 mt-6 transition bg-white rounded-lg shadow text-sky-600 hover:bg-white/80"
                     >
                         Create a WebSpace
                     </button>

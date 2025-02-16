@@ -51,7 +51,7 @@ function Header() {
                       class="flex title-font font-medium items-center text-gray-900 "
                     >
                       <img
-                        src={require("../../assets/logo192.png")}
+                        src={require("../../assets/logowebweave.png")}
                         alt="Logo"
                         className="size-8 md:size-10"
                       />
@@ -173,7 +173,7 @@ function Header() {
             class="flex title-font font-medium items-center text-gray-900 "
           >
             <img
-              src={require("../../assets/logo192.png")}
+              src={require("../../assets/logowebweave.png")}
               alt="Logo"
               className="size-8 md:size-10"
             />
